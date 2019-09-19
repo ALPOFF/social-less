@@ -1,0 +1,12 @@
+.content img {
+    background-size: contain;
+}
+
+.content {
+    grid-area: c;
+    background-color: lightgrey;
+}
+
+.item {
+    color: greenyellow;
+}
