@@ -1,15 +1,12 @@
 import React from "react";
 import classes from './Profile.module.css'
 import MyPosts from "./MyPosts/MyPosts";
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 const Profile = () => {
     return <div>
-        <div>
-            <img src={'http://s3.amazonaws.com/wallpapers2/wallpapers/images/000/000/582/thumb/andromeda_galaxy.jpg?1499899637'}/>
-        </div>
-        <div>
-            ava + description
-        </div>
+        <ProfileInfo/>
+
 
         <MyPosts/>
     </div>
