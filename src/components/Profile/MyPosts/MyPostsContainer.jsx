@@ -3,17 +3,17 @@ import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../red
 import MyPosts from "./MyPosts";
 import {connect} from "react-redux";
 
-let mapStateToProps = (state) => {
+const mapStateToProps = (state) => {
     return {
-        postData: state.postData,
-        newPostText: state.newPostText
+        postData: state.profilePage.postData,
+        newPostText: state.profilePage.newPostText
     }
 }
-let mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
     return {
         addPost: () => {dispatch(addPostActionCreator())
         },
-        onPostChange: (text) => {dispatch(updateNewPostTextActionCreator(text))
+        updateNewPostText: (text) => {dispatch(updateNewPostTextActionCreator(text))
         }
     }
 }
