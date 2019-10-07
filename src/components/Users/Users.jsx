@@ -3,9 +3,11 @@ import * as axios from "axios";
 
 class Users extends React.Component {
 
-    constructor(props) {
-        super(props);
+ /*   constructor(props) {
+        super(props); //если только это то не пишем
+    }*/
 
+    componentDidMount() {
         axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
             this.props.setUsers(response.data.items)
         });
