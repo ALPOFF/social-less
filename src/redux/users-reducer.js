@@ -1,13 +1,15 @@
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
+const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
+const SET_TOTAL_COUNT = 'SET_TOTAL_COUNT';
 
 let initialState = {
     users: [
-        /*{id: 1, photoUrl:'http://bootstraptema.ru/snippets/icons/2016/mia/3.png', followed: false, fullName: 'Kirill', status: 'Go go go', location: {city: 'Moscow', country: 'Russia'}},
-        {id: 2, photoUrl:'http://propsyteen.ru/wp-content/themes/siteseed/css/boy0.png', followed: true, fullName: 'Ivan', status: 'Hello World', location: {city: 'Spb', country: 'Russia'}},
-        {id: 3, photoUrl:'https://cdn1.iconfinder.com/data/icons/user-pictures/100/female1-512.png', followed: false, fullName: 'Svetlana', status: 'Sunshine', location: {city: 'Minsk', country: 'Belarus'}},*/
     ],
+    pageSize: 5,
+    totalUsersCount: 0,
+    currentPage: 1
 }
 
 const usersReducer = (state = initialState, action) => {
@@ -35,7 +37,21 @@ const usersReducer = (state = initialState, action) => {
                 })
             }
         case SET_USERS: {
-            return {...state, users: [...state.users, ...action.users]}
+            return {
+                ...state,
+                users: action.users}
+
+        }
+        case SET_CURRENT_PAGE: {
+            return {
+                ...state,
+                currentPage: action.currentPage}
+
+        }
+        case SET_TOTAL_COUNT: {
+            return {
+                ...state,
+                totalUsersCount: action.count}
 
         }
         default:
@@ -62,6 +78,20 @@ export const setUsersAC = (users) => { // set old to new
     return {
         type: SET_USERS,
         users
+    }
+}
+
+export const setCurrentPageAC = (currentPage) => { // set old to new
+    return {
+        type: SET_CURRENT_PAGE,
+        currentPage
+    }
+}
+
+export const setTotalUserCountAC = (count) => { // set old to new
+    return {
+        type: SET_TOTAL_COUNT,
+        count
     }
 }
 
