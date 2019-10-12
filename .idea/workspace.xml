@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eba73e94-0fc9-420a-8339-6c9782aed6d2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/Users/UsersContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/UsersContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/users-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-reducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profiles-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profiles-reducer.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +30,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Хакатон/test_disk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Profile" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -37,18 +42,18 @@
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\social-less\src\components\Profile" />
+      <recent name="D:\social-less\src\components\Users" />
+      <recent name="D:\social-less\src\redux" />
+      <recent name="D:\social-less\src\components\Dialogs" />
+      <recent name="D:\social-less\src\components\Profile\MyPosts" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\social-less\src\components\Profile" />
       <recent name="D:\social-less\src\components\Profile\MyPosts" />
       <recent name="D:\social-less\src\components\Nav" />
       <recent name="D:\social-less\src\components\Header" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\social-less\src\components\Users" />
-      <recent name="D:\social-less\src\redux" />
-      <recent name="D:\social-less\src\components\Dialogs" />
-      <recent name="D:\social-less\src\components\Profile\MyPosts" />
-      <recent name="D:\social-less\src\components\Dialogs\DialogItem" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -95,7 +100,9 @@
       <workItem from="1570523712875" duration="2774000" />
       <workItem from="1570836464942" duration="5321000" />
       <workItem from="1570882979101" duration="299000" />
-      <workItem from="1570888052218" duration="5831000" />
+      <workItem from="1570888052218" duration="6136000" />
+      <workItem from="1570895765115" duration="133000" />
+      <workItem from="1570895907160" duration="3919000" />
     </task>
     <servers />
   </component>
