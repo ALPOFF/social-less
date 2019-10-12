@@ -5,7 +5,7 @@
 
     grid-template-areas: "h h" "n c";
 
-    grid-template-rows: 60px 1fr; /*размеры строк (2 штуки)*/
+    grid-template-rows: 70px 1fr; /*размеры строк (2 штуки)*/
     grid-template-columns: 2fr 10fr;
     /*  grid-gap: 10px;*/
 }
