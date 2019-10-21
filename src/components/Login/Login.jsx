@@ -5,27 +5,32 @@ import {required} from "../../utils/validators/validator";
 import {connect} from "react-redux";
 import {login} from "../../redux/auth-reducer";
 import {Redirect} from "react-router-dom";
+import style from "./../common/FormsControls/FormsControls.module.css"
 
 const LoginForm = (props) => {
     return <form onSubmit={props.handleSubmit}>
         <div>
-            <Field validate = {[required]} placeholder={"Email"} name={"email"} component={Input}/>
+            <Field validate={[required]} placeholder={"Email"} name={"email"} component={Input}/>
         </div>
         <div>
-            <Field validate = {[required]} type={"password"} placeholder={"Password"} name={"password"} component={Input}/>
+            <Field validate={[required]} type={"password"} placeholder={"Password"} name={"password"}
+                   component={Input}/>
         </div>
         <div>
-            <Field validate = {[required]} component={Input} name={"rememberMe"} type={"checkbox"} /> remember me
+            <Field validate={[required]} component={Input} name={"rememberMe"} type={"checkbox"}/> remember me
         </div>
         <div>
+            {props.error && <div className={style.formSummaryError}>
+                {props.error}
+            </div>}
             <button>Login</button>
         </div>
     </form>
 }
 
-const LoginReduxForm = reduxForm ({
+const LoginReduxForm = reduxForm({
     form: 'login'
-}) (LoginForm)
+})(LoginForm)
 
 
 const Login = (props) => {
@@ -38,7 +43,7 @@ const Login = (props) => {
 
     return <div>
         <h1>Login</h1>
-        <LoginReduxForm onSubmit={onSubmit} />
+        <LoginReduxForm onSubmit={onSubmit}/>
     </div>
 }
 
