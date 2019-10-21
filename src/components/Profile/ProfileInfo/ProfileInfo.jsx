@@ -2,6 +2,7 @@ import React from "react";
 import classes from './ProfileInfo.module.css'
 import Preloader from "../../common/preloader/Preloader";
 import ProfileStatus from "./ProfileStatus"
+import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
 const ProfileInfo = (props) => {
 
@@ -18,7 +19,7 @@ const ProfileInfo = (props) => {
             {props.profile.photos.large === null ?
                 <div><img src="https://www.fii.org/wp-content/uploads/2017/02/fg-avatar-anonymous-user-retina.png" alt="" height={150}/></div>
                 : <img src={props.profile.photos.large}/>}
-            <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
+            <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
         </div>
     </div>
 
