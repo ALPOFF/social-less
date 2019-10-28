@@ -21,8 +21,8 @@ import {
 class UsersContainer extends React.Component {
 
     componentDidMount() {
-        debugger
-        this.props.getUsers(this.props.currentPage, this.props.pageSize);
+        let {currentPage, pageSize} = this.props;
+        this.props.getUsers(currentPage, pageSize);
         /*this.props.toggleIsFetching(true);
         usersAPI.requestUsers(this.props.currentPage, this.props.pageSize).then(data => {
             this.props.toggleIsFetching(false);
@@ -32,7 +32,8 @@ class UsersContainer extends React.Component {
     }
 
     onPageChanged = (pageNumber) => {
-        this.props.getUsers(pageNumber, this.props.pageSize);
+        let {pageSize} = this.props;
+        this.props.getUsers(pageNumber, pageSize);
         /*this.props.setCurrentPage(pageNumber);
         this.props.toggleIsFetching(true);
         usersAPI.requestUsers(pageNumber, this.props.pageSize).then(data => {
@@ -78,14 +79,6 @@ let mapStateToProps = (state) => {
         followingInProgress: getFollowingInProgress(state)
     }
 }
-
-/*export default withAuthRedirect(connect(mapStateToProps, {
-    follow,
-    unfollow,
-    setCurrentPage,
-    toggleFollowingProgress,
-    requestUsers
-})(UsersContainer));*/
 
 export default compose(
     connect(mapStateToProps, {

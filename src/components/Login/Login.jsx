@@ -1,37 +1,11 @@
 import React from "react"
 import {Field, reduxForm} from "redux-form"
-import {Input} from "../common/FormsControls/FormsControls";
+import {createField, Input} from "../common/FormsControls/FormsControls";
 import {required} from "../../utils/validators/validator";
 import {connect} from "react-redux";
 import {login} from "../../redux/auth-reducer";
 import {Redirect} from "react-router-dom";
 import style from "./../common/FormsControls/FormsControls.module.css"
-
-const LoginForm = (props) => {
-    return <form onSubmit={props.handleSubmit}>
-        <div>
-            <Field validate={[required]} placeholder={"Email"} name={"email"} component={Input}/>
-        </div>
-        <div>
-            <Field validate={[required]} type={"password"} placeholder={"Password"} name={"password"}
-                   component={Input}/>
-        </div>
-        <div>
-            <Field validate={[required]} component={Input} name={"rememberMe"} type={"checkbox"}/> remember me
-        </div>
-        <div>
-            {props.error && <div className={style.formSummaryError}>
-                {props.error}
-            </div>}
-            <button>Login</button>
-        </div>
-    </form>
-}
-
-const LoginReduxForm = reduxForm({
-    form: 'login'
-})(LoginForm)
-
 
 const Login = (props) => {
 
@@ -46,6 +20,24 @@ const Login = (props) => {
         <LoginReduxForm onSubmit={onSubmit}/>
     </div>
 }
+
+const LoginForm = ({handleSubmit, error}) => {
+    return <form onSubmit={handleSubmit}>
+            {createField("Email", "email", [required], Input)}
+            {createField("Password", "password", [required], Input, {type: "password"})}
+            {createField(null, "rememberMe", [], Input, {type: "checkbox"}, "remember me")}
+        <div>
+            {error && <div className={style.formSummaryError}>
+                {error}
+            </div>}
+            <button>Login</button>
+        </div>
+    </form>
+};
+
+const LoginReduxForm = reduxForm({
+    form: 'login'
+})(LoginForm)
 
 const mapStateToProps = (state) => ({
     isAuth: state.auth.isAuth
